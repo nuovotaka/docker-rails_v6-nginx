@@ -1,0 +1,33 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
+    env_file: ./docker/mysql/password.env
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/rails/Dockerfile
+    command: bundle exec rails s
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/myapp
+    environment:
+      RAILS_ENV: development
+    env_file: ./docker/mysql/password.env
+    depends_on:
+      - db
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    ports:
+      - 80:80
+    volumes_from:
+      - app
+    depends_on:
+      - app
