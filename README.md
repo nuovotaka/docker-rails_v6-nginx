@@ -101,15 +101,6 @@ Dockerに付随してくるkitematicで停止と削除を行う
 ## コンテナのイメージの削除
 Dockerに付随してくるkitematicでMy Imagesからイメージの削除を行う
 
-## 再起動
-古いプロセスの削除
-```
-rm -rf tmp/pids/server.pid
-```
-そしてupする
-```
-docker-compose up
-```
 
 ## mysqlへの接続
 [TablePlus](https://tableplus.com/)を使ってデータベースを確認(Mac)
