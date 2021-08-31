@@ -4,11 +4,15 @@ Docker for Mac で Ruby on Rails アプリの開発環境
 workディレクトリ(なんでも構いません)を作成して
 ```
 mkdir work
+```
+```
 cd work
 ```
 githubからクローンしてくる
 ```
 git clone https://github.com/nuovotaka/docker-rails_v6-nginx.git
+```
+```
 cd docker-rails_v6-nginx
 ```
 
@@ -56,6 +60,8 @@ default: &default
 最初はWebpackのインストールとデータベースを作成する（次回からは必要ない）
 ```
 docker-compose run --rm app bundle exec rails webpacker:install
+```
+```
 docker-compose run --rm app rake db:create
 ```
 
@@ -79,6 +85,9 @@ localhost でRailsのウェルカム画面が表示されるのがわかると�
 別タブで以下のコマンドを実行する
 ```
 docker-compose run app rails g scaffold Memo title:string body:text
+```
+```
+docker-compose run app rake db:migrate
 ```
 
 基本的にRailsコマンドの最初に「docker-compose run app」をつけてやればコンテナ上で実行され、Mac側にも反映されます。
