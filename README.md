@@ -105,11 +105,10 @@ $ docker-compose up
 ```
 
 ## コンテナの停止と削除
-Dockerに付随してくるkitematicで停止と削除を行う
+DashboardのContainers/Appsで停止と削除を行う
 
 ## コンテナのイメージの削除
-Dockerに付随してくるkitematicでMy Imagesからイメージの削除を行う
-
+DashboardのImagesでイメージの削除を行う
 
 ## mysqlへの接続
 [TablePlus](https://tableplus.com/)を使ってデータベースを確認(Mac)
